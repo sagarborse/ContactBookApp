@@ -3,10 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 
 # local import
 from instance.config import app_config
-from flask import request, jsonify, abort, make_response, send_from_directory
+from flask import Flask, request, jsonify, abort, make_response, send_from_directory
 
 # initialize sql-alchemy
 db = SQLAlchemy()
+app = Flask(__name__, static_url_path='')
 
 def create_app(config_name):
 	print(" create app")
