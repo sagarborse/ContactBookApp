@@ -17,9 +17,9 @@ def create_app(config_name):
 	app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 	db.init_app(app)
 
-@app.route('/loaderio-1b8c02206cb0452aff96f35c981d71b7.txt')
-def static_from_root():
-    return send_from_directory(app.static, request.path[1:])
+	@app.route('/loaderio-1b8c02206cb0452aff96f35c981d71b7.txt')
+	def static_from_root():
+    	return send_from_directory(app.static, request.path[1:])
 
 	@app.route('/contactbooks/', methods=['POST', 'GET'])
 	def contactbooks():
