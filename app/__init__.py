@@ -7,12 +7,11 @@ from flask import Flask, request, jsonify, abort, make_response, send_from_direc
 
 # initialize sql-alchemy
 db = SQLAlchemy()
-app = Flask(__name__, static_url_path='')
 
 def create_app(config_name):
 	print(" create app")
 	from app.models import ContactBook, User
-	app = FlaskAPI(__name__, instance_relative_config=True)
+	app = FlaskAPI(__name__, instance_relative_config=True, static_url_path='')
 	app.config.from_object(app_config[config_name])
 	app.config.from_pyfile('config.py')
 	app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
